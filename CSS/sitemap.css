@@ -1,0 +1,21 @@
+.heading > h3{
+    color: #d64848;
+}
+
+.list > h5{
+    color: #4d1d5c;
+}
+
+.list > ul{
+    list-style-type: none;
+}
+
+.list ul > li{
+    margin-top: 10px;
+    font-size: 18px;
+    margin-left: -40px;
+}
+
+.list ul li a:hover{
+    color: #d64848;
+}

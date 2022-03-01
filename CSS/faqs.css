@@ -1,0 +1,83 @@
+.faqs {
+    background-color: white;
+    padding: 35px 20px 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.faqs_heading h2 {
+    /* color: #4d1d5c; */
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.faqs_heading p {
+    color: #d74848;
+    font-weight: bold;
+}
+
+.faqs_qus .collapsible {
+    background-color: white;
+    color: #4d1d5c;
+    cursor: pointer;
+    padding: 15px 12px 15px 8px;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #423d3d30;
+    text-align: left;
+    outline: none;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.faqs_qus .collapsible:last-child {
+    border-bottom: none;
+}
+
+.faqs_qus .collapsible:focus {
+    outline: 1px dotted;
+    outline: none;
+}
+
+.faqs_qus .active, .faqs_qus .collapsible:hover {
+    background-color: #4d1d5c;
+    color: white!important;
+    transition: .3s all;
+}
+
+.faqs_qus .collapsible:after {
+    content: '\002B';
+    color: #d74848;
+    font-size: 16px;
+    font-weight: bold;
+    float: right;
+}
+
+.faqs_qus .active:after {
+    content: "\2212";
+    color: #d74848;
+}
+
+.faqs_qus .content {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #f1f1f1;
+}
+
+.faqs_qus .content p {
+    margin-top: 8px;
+}
+
+.faqs_qus .content p a{
+    color: #d74848;
+}
+
+.mailPolicy{
+    color: #d74848;
+}
+
+.mailPolicy:hover{
+    color: #d74848;
+}

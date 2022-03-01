@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>BrightWorld - LED Store</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../Images/favicon.png">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css">
+
+    <link rel="stylesheet" href="../CSS/faqs.css">
+
+    <!-- Style.css -->
+    <link type="text/css" rel="preload stylesheet" as="style" onload="this.onload=null;this.rel='stylesheet'"
+        href="../CSS/style.css">
+
+    <!-- MyStyle.css -->
+    <link type="text/css" rel="preload stylesheet" as="style" onload="this.onload=null;this.rel='stylesheet'"
+        href="../CSS/myStyle.css">
+
+    <link rel="stylesheet" href="../CSS/media-query.css">
+
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+</head>
+
+<body>
+    <div class="sticky-top" id="headbar">
+        <div class="topbar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-xs-4">
+                        <div class="topinner">
+                            <p>BEST OFFER:&nbsp;&nbsp;<strong>10% OFF</strong></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-4">
+                        <div class="topinner">
+                            <p>USE CODE:&nbsp;&nbsp;<strong>WELCOME10</strong></p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="topinner">
+                            <p style="display:inline-block">
+                                ENDS IN: </p>
+                            <div id="clockdiv">
+                                <div>
+                                    <span id="day"></span>
+                                    <div id="smalltext1">Days</div>
+                                </div>
+                                <div>
+                                    <span id="hr"></span>
+                                    <div id="smalltext2">Hours</div>
+                                </div>
+                                <div>
+                                    <span id="min"></span>
+                                    <div id="smalltext3">Minutes</div>
+                                </div>
+                                <div>
+                                    <span id="sec"></span>
+                                    <div id="smalltext4">Seconds</div>
+                                </div>
+                            </div>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="headertop" id="mainheader">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3"><a href="../index.html" alt="BW Store" title="BW Store" id="logo"><img
+                                src="../Images/BW_Logo-01.png" alt="BW Store" title="BW Store"></a></div>
+                    <div class="col-md-5">
+                        <div class="searchbox">
+                            <div class="form-inline my-6 my-lg-0">
+
+                                <div class="navbar-form" role="search">
+                                    <div class="input-group add-on">
+                                        <input class="form-control mr-sm-6" placeholder="Search brand or category"
+                                            aria-label="Search" autocomplete="off" name="" id="srch-term" type="text">
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-default search" onclick="searchFunc()">
+                                                Search
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <ul class="rightlinks">
+
+                            <li title="Sign In"><a href="register.html"><i class="fa fa-user"
+                                        aria-hidden="true"></i>Register</a>
+                            </li>
+
+                            <li title="Sign In"><a href="login.html"><i class="fa fa-user" aria-hidden="true"></i>Sign
+                                    In</a></li>
+
+
+                            <li>
+                                <div class="cartbox">
+                                    <a class="basket" title="My Cart" href="" data-toggle="modal" data-target="#cart">
+                                        <img src="../Images/cart.png" alt="BW Store Cart">
+                                        <span class="cartitems">
+                                            <span class="total-count" id="myCartCount"></span>
+                                        </span>
+                                    </a>
+                                </div>
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
+                data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="container" id="desktop_menu">
+                <div class="collapse navbar-collapse" id="collapsibleNavId">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="../index.html">
+                                <i class="fa fa-home" aria-hidden="true"></i> Home <span
+                                    class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="aboutus.html">About Us
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Brands
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                <a class="dropdown-item" id="generation"
+                                    onclick="window.location.assign('generation.html')">Generation Lighting</a>
+                                <a class="dropdown-item" id="kichler"
+                                    onclick="window.location.assign('kichler.html')">Kichler Lighting</a>
+                                <a class="dropdown-item" id="maxim" onclick="window.location.assign('maxim.html')">Maxim
+                                    Lighting</a>
+                                <a class="dropdown-item" id="minka" onclick="window.location.assign('minka.html')">Minka
+                                    Lavery Lighting</a>
+                                <a class="dropdown-item" id="progress"
+                                    onclick="window.location.assign('progress.html')">Progress Lighting</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Categories
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                <a class="dropdown-item" id="ceiling"
+                                    onclick="window.location.assign('ceiling.html')">Ceiling Lights</a>
+                                <a class="dropdown-item" id="decorative"
+                                    onclick="window.location.assign('decorative.html')">Decorative Lights</a>
+                                <a class="dropdown-item" id="emergency"
+                                    onclick="window.location.assign('emergency.html')">Emergency Lights</a>
+                                <a class="dropdown-item" id="light" onclick="window.location.assign('light.html')">Light
+                                    Bulbs</a>
+                                <a class="dropdown-item" id="outdoor"
+                                    onclick="window.location.assign('street.html')">Street Lights</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="gallery.html">Gallery
+                            </a>
+                        </li>
+                        <li class="nav-item last">
+                            <a class="nav-link" href="contact.html">Contact Us
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8 faqs">
+                <div class="faqs_heading">
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Below you'll find answers to the questions we get asked the most</p>
+                </div>
+
+                <div class="faqs_qus">
+
+                    <button class="collapsible">1.&nbsp; How do I know your site is secure?</button>
+                    <div class="content">
+                        <p>Our entire site is secure by way of 128-bit SSL (Secure Socket Layer) encryption, which is
+                            the Industry Standard for safe online shopping. The small 'padlock icon' to the left of the
+                            URL bar at the top of the page confirms the security of our site. In addition, your personal
+                            data is totally protected and we never store credit card details.</p>
+                    </div>
+
+                    <button class="collapsible">2.&nbsp; Do you offer discounts for large orders?</button>
+                    <div class="content">
+                        <p>We pride ourselves on price checking our products regularly to be very competitive. However,
+                            if you are considering placing an order for an unusually large quantity of products please
+                            contact us at <a href="mailto:support@brightworld.com">support@brightworld.com</a> and we
+                            will be happy to talk to you.
+                        </p>
+                    </div>
+
+
+                    <button class="collapsible">3.&nbsp; I have an order query - who can I contact?</button>
+                    <div class="content">
+                        <p>Our customer services team are ready to answer your queries from Monday to Sunday 24 hrs.
+                            Email us at <a href="mailto:support@brightworld.com">support@brightworld.com</a> for
+                            fast and efficient
+                            response.</p>
+                    </div>
+
+                    <button class="collapsible">4.&nbsp; What if I receive the wrong items or my order is
+                        incomplete?</button>
+                    <div class="content">
+                        <p>We pride ourselves in quality checking your order during the picking and packing process. In
+                            the unlikely event that you have received the wrong items, we make the process of rectifying
+                            this very simple. Just <a href="contact.html">contact</a> our customer
+                            services team straight away.</p>
+                    </div>
+
+                    <button class="collapsible">5.&nbsp; I've ordered the wrong item; can I still return it?</button>
+                    <div class="content">
+                        <p>Yes - no problem. Our 'Change Your Mind' guarantee is included with most products. This
+                            guarantee gives you the right to return any unwanted items within 90 days of receipt, with
+                            no hassle and no fuss. Please contact on
+                            <a href="mailto:support@brightworld.com">support@brightworld.com</a>
+                        </p>
+                    </div>
+
+                    <button class="collapsible">6.&nbsp; What if I find the product cheaper elsewhere?</button>
+                    <div class="content">
+                        <p>Our team of buyers are constantly price checking our products as we pride ourselves on
+                            offering quality products at very competitive prices. However, if you have a query on the
+                            price of our products, please don't hesitate to contact our sales team at
+                            <a href="mailto:support@brightworld.com">support@brightworld.com</a>
+                        </p>
+                    </div>
+
+                    <button class="collapsible">7.&nbsp; What do I do if a product has been damaged in transit?</button>
+                    <div class="content">
+                        <p>We take every care when packing and delivering your order to ensure that it arrives safely
+                            and in full working order. Please inspect your order within 24 hours of arrival and, in the
+                            very rare event that goods are damaged in transit, please <a href="contact.html">Contact
+                                us</a>
+                            as quickly as possible and no later than 30 days. We will be happy to assist you with a
+                            replacement if applicable or refund you back to your original method of payment.
+
+                        </p>
+                    </div>
+
+                    <button class="collapsible">8.&nbsp; Are light bulbs included with your light fittings?</button>
+                    <div class="content">
+                        <p>Where stated, lights bulbs are included with fittings. Where light bulbs are not included,
+                            you'll find suggested light bulb choices for your fitting clearly indicated in “related
+                            products” located underneath the price on the individual listing. Some of our fittings have
+                            integrated LEDs and therefore do not require bulbs.</a>
+                        </p>
+                    </div>
+
+                    <button class="collapsible">9.&nbsp; Do your prices include VAT?</button>
+                    <div class="content">
+                        <p>Yes – all prices are inclusive of VAT.</p>
+                    </div>
+
+                    <button class="collapsible">10.&nbsp; When will my order arrive?</button>
+                    <div class="content">
+                        <p>When placing an online order for stocked items prior to 7.30pm Monday – Thursday, 3:45pm
+                            Friday, or 1:30pm on a Sunday, you should receive your order within 2 days (excluding Sunday
+                            & Holidays). Please note: if you place an online order on a Saturday or before 1:30pm
+                            on a Sunday, delivery will take place the following Monday or Tuesday unless it is a Bank
+                            Holiday. Orders received after 1:30pm on a Sunday will be delivered Tuesday or Wednesday.
+                            Out of stock and non-stocked items may take a little longer to deliver, but we will keep you
+                            fully informed. </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2"></div>
+        </div>
+    </div>
+
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+
+<section class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4  col-md-4 footer_info">
+                <h3>Quick Information</h3>
+                <p><i class="fas fa-envelope"></i><a href="mailto:">&nbsp;&nbsp;support@brightworld.com</a></p>
+                <p><i class="fas fa-map-marker-alt"></i><a href="#" onclick="return false;">&nbsp;&nbsp;Ap #867-859 Sit Rd. Azusa New York 39531</a></p>
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </li>
+                    <li><a href="https://twitter.com/?lang=en" target="_blank"><i class="fab fa-twitter"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-8  col-md-8">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 footer_link">
+                        <h3>Categories</h3>
+                        <ul>
+                            <li><a id="ceiling" onclick="window.location.assign('ceiling.html')">Ceiling Lights</a>
+                            </li>
+                            <li><a id="decorative" onclick="window.location.assign('decorative.html')">Decorative
+                                    Lights</a></li>
+                            <li><a id="emergency" onclick="window.location.assign('emergency.html')">Emergency
+                                    Lights</a></li>
+                                    <li><a id="light" onclick="window.location.assign('light.html')">Light Bulbs</a></li>
+                            <li><a id="wall" onclick="window.location.assign('street.html')">Street Lights</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4 col-md-4 footer_link">
+                        <h3>Brands</h3>
+                        <ul>
+                            <li><a id="generation" onclick="window.location.assign('generation.html')">Generation
+                                    Lighting</a></li>
+                            <li><a id="kichler" onclick="window.location.assign('kichler.html')">kichler
+                                    Lighting</a></li>
+                            <li><a id="maxim" onclick="window.location.assign('maxim.html')">Maxim Lighting</a></li>
+                            <li><a id="minka" onclick="window.location.assign('minka.html')">Minka Lavery Lighting</a></li>
+                            <li><a id="progress" onclick="window.location.assign('progress.html')">Progress
+                                    Lighting</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4 col-md-4 footer_link">
+                        <h3>Service & Legal</h3>
+                        <ul>
+                            <li><a href="faqs.html">FAQs</a></li>
+                            <li><a href="policy.html">Return Policy</a></li>
+                            <li><a href="privacypolicy.html">Privacy Policy</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="sitemap.html">Site Map</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p>Copyright © 2021 BrightWorld</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="https://api.whatsapp.com/send?phone=+923012851596&text=Hello!%20I%27m%20at%20Bright%20World." class="float"
+        target="_blank">
+        <i class="fab fa-whatsapp my-float"></i>
+    </a>
+
+
+    <!-- Cart Modal -->
+    <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"
+        style="z-index: 9999;">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content cartModal">
+                <div class="modal-header">
+                    <h5 class="modal-title addtocart-tittle" id="exampleModalLabel">Your Selected Items:</h5>
+                    <button type="button" class="close addtocart-close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-9">
+                            <div class="table-responsive">
+                                <table class="show-cart table">
+
+                                </table>
+                            </div>
+
+                        </div>
+                        <div class="col-md-3">
+                            <div>Price: $ <span class="total-cart" id="totCart"></span></div>
+                            <div>Discount Code: <input type="text" class="discount-code" id="disc_code"
+                                    placeholder="ENTER CODE">&nbsp;&nbsp;</div>
+                            <button class='applyBtn btn btn-primary' onclick="codeApply()">APPLY</button>
+                            <div>Total Price: <strong>$ <span class="discount-cart" id="discCart"></span></strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary Closebtn" data-dismiss="modal">Close</button>
+                    <button type="button" id="buyBtn" class="btn btn-primary Buybtn">Buy now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- user cart form -->
+
+    <div class="modal fade" id="user-cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true" style="z-index: 99999;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Enter your Details</h5>
+                    <button type="button" class="close addtocart-close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body user-cart-body">
+                    <div class="form-group user-cart-form-grp">
+                        <label>Name</label>
+                        <input type="text" class="form-control" id="user-cart-name" placeholder="Enter Name">
+                    </div>
+                    <div class="form-group user-cart-form-grp">
+                        <label>Email</label>
+                        <input type="text" class="form-control" id="user-cart-email" placeholder="Enter Email">
+                    </div>
+                    <div class="form-group user-cart-form-grp">
+                        <label>Phone</label>
+                        <input type="text" class="form-control" id="user-cart-phone" placeholder="Enter Phone Number"
+                            maxlength="11">
+                    </div>
+                    <div class="form-group user-cart-form-grp">
+                        <label>Adderss</label>
+                        <input type="text" class="form-control" id="user-cart-address" placeholder="Enter Address">
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary Closebtn" data-dismiss="modal">Close</button>
+                    <button type="button" id="user-cart-submit" class="btn btn-primary Buybtn">Submit</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- jQuery, JS  -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
+
+
+    <script src="../JS/cart.js"></script>
+    <script src="../JS/timer.js"></script>
+    <script src="../JS/search.js"></script>
+
+</body>
+
+</html>
+
+<script>
+    const $dropdown = $(".dropdown");
+    const $dropdownToggle = $(".dropdown-toggle");
+    const $dropdownMenu = $(".dropdown-menu");
+    const showClass = "show";
+
+    $(window).on("load resize", function () {
+        if (this.matchMedia("(min-width: 768px)").matches) {
+            $dropdown.hover(
+                function () {
+                    const $this = $(this);
+                    $this.addClass(showClass);
+                    $this.find($dropdownToggle).attr("aria-expanded", "true");
+                    $this.find($dropdownMenu).addClass(showClass);
+                },
+                function () {
+                    const $this = $(this);
+                    $this.removeClass(showClass);
+                    $this.find($dropdownToggle).attr("aria-expanded", "false");
+                    $this.find($dropdownMenu).removeClass(showClass);
+                }
+            );
+        } else {
+            $dropdown.off("mouseenter mouseleave");
+        }
+    });
+</script>

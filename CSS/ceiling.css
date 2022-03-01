@@ -1,0 +1,58 @@
+.nav-pills-custom .nav-link {
+    color: #4d1d5c;
+    background: #fff;
+    position: relative;
+}
+
+.nav-pills-custom .nav-link.active {
+    color: white;
+    background: #4d1d5c;
+}
+
+
+/* Add indicator arrow for the active tab */
+@media (min-width: 992px) {
+    .nav-pills-custom .nav-link::before {
+        content: '';
+        display: block;
+        border-top: 8px solid transparent;
+        border-left: 10px solid #4d1d5c;
+        border-bottom: 8px solid transparent;
+        position: absolute;
+        top: 50%;
+        right: -10px;
+        transform: translateY(-50%);
+        opacity: 0;
+    }
+}
+
+.nav-pills-custom .nav-link.active::before {
+    opacity: 1;
+}
+
+.prod{
+    margin-top: 12px;
+}
+
+.prod:hover{
+    height: 369px !important;
+}
+
+.prodimg{
+    text-align: center;
+}
+
+.pt-5, .py-5 {
+    padding-top: 1rem!important;
+    padding-bottom: 1rem!important;
+}
+
+.tab-content>.active {
+    display: block;
+    overflow: hidden;
+    height: fit-content;
+}
+
+.tab-pane > .col-md-4{
+    padding: 0px;
+}

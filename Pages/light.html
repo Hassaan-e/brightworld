@@ -1,0 +1,855 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>BrightWorld - LED Store</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../Images/favicon.png">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css">
+
+    <link rel="stylesheet" href="../CSS/ceiling.css">
+
+    <!-- Style.css -->
+    <link type="text/css" rel="preload stylesheet" as="style" onload="this.onload=null;this.rel='stylesheet'"
+        href="../CSS/style.css">
+
+    <!-- MyStyle.css -->
+    <link type="text/css" rel="preload stylesheet" as="style" onload="this.onload=null;this.rel='stylesheet'"
+        href="../CSS/myStyle.css">
+
+    <link rel="stylesheet" href="../CSS/media-query.css">
+
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+</head>
+
+<body>
+    <div class="sticky-top" id="headbar">
+        <div class="topbar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-xs-4">
+                        <div class="topinner">
+                            <p>BEST OFFER:&nbsp;&nbsp;<strong>10% OFF</strong></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-4">
+                        <div class="topinner">
+                            <p>USE CODE:&nbsp;&nbsp;<strong>WELCOME10</strong></p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="topinner">
+                            <p style="display:inline-block">
+                                ENDS IN: </p>
+                            <div id="clockdiv">
+                                <div>
+                                    <span id="day"></span>
+                                    <div id="smalltext1">Days</div>
+                                </div>
+                                <div>
+                                    <span id="hr"></span>
+                                    <div id="smalltext2">Hours</div>
+                                </div>
+                                <div>
+                                    <span id="min"></span>
+                                    <div id="smalltext3">Minutes</div>
+                                </div>
+                                <div>
+                                    <span id="sec"></span>
+                                    <div id="smalltext4">Seconds</div>
+                                </div>
+                            </div>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="headertop" id="mainheader">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3"><a href="../index.html" alt="BW Store" title="BW Store" id="logo"><img
+                                src="../Images/BW_Logo-01.png" alt="BW Store" title="BW Store"></a></div>
+                    <div class="col-md-5">
+                        <div class="searchbox">
+                            <div class="form-inline my-6 my-lg-0">
+
+                                <div class="navbar-form" role="search">
+                                    <div class="input-group add-on">
+                                        <input class="form-control mr-sm-6" placeholder="Search brand or category"
+                                            aria-label="Search" autocomplete="off" name="" id="srch-term" type="text">
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-default search" onclick="searchFunc()">
+                                                Search
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <ul class="rightlinks">
+
+                            <li title="Sign In"><a href="register.html"><i class="fa fa-user"
+                                        aria-hidden="true"></i>Register</a>
+                            </li>
+
+                            <li title="Sign In"><a href="login.html"><i class="fa fa-user" aria-hidden="true"></i>Sign
+                                    In</a></li>
+
+
+                            <li>
+                                <div class="cartbox">
+                                    <a class="basket" title="My Cart" href="" data-toggle="modal" data-target="#cart">
+                                        <img src="../Images/cart.png" alt="BW Store Cart">
+                                        <span class="cartitems">
+                                            <span class="total-count" id="myCartCount"></span>
+                                        </span>
+                                    </a>
+                                </div>
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
+                data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="container" id="desktop_menu">
+                <div class="collapse navbar-collapse" id="collapsibleNavId">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="../index.html">
+                                <i class="fa fa-home" aria-hidden="true"></i> Home <span
+                                    class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="aboutus.html">About Us
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Brands
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                <a class="dropdown-item" id="generation"
+                                    onclick="window.location.assign('generation.html')">Generation Lighting</a>
+                                <a class="dropdown-item" id="kichler"
+                                    onclick="window.location.assign('kichler.html')">Kichler Lighting</a>
+                                <a class="dropdown-item" id="maxim" onclick="window.location.assign('maxim.html')">Maxim
+                                    Lighting</a>
+                                <a class="dropdown-item" id="minka" onclick="window.location.assign('minka.html')">Minka
+                                    Lavery Lighting</a>
+                                <a class="dropdown-item" id="progress"
+                                    onclick="window.location.assign('progress.html')">Progress Lighting</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Categories
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                <a class="dropdown-item" id="ceiling"
+                                    onclick="window.location.assign('ceiling.html')">Ceiling Lights</a>
+                                <a class="dropdown-item" id="decorative"
+                                    onclick="window.location.assign('decorative.html')">Decorative Lights</a>
+                                <a class="dropdown-item" id="emergency"
+                                    onclick="window.location.assign('emergency.html')">Emergency Lights</a>
+                                <a class="dropdown-item" id="light" onclick="window.location.assign('light.html')">Light
+                                    Bulbs</a>
+                                <a class="dropdown-item" id="outdoor"
+                                    onclick="window.location.assign('street.html')">Street Lights</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="gallery.html">Gallery
+                            </a>
+                        </li>
+                        <li class="nav-item last">
+                            <a class="nav-link" href="contact.html">Contact Us
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <section class="py-5 header">
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-md-3">
+                    <!-- Tabs nav -->
+                    <div class="nav flex-column nav-pills nav-pills-custom" id="v-pills-tab" role="tablist"
+                        aria-orientation="vertical">
+                        <a class="nav-link mb-3 p-3 active" id="v-pills-home-tab" data-toggle="pill"
+                            href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">
+                            <span class="font-weight-bold small text-uppercase">LED Bulbs</span></a>
+
+                        <a class="nav-link mb-3 p-3" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile"
+                            role="tab" aria-controls="v-pills-profile" aria-selected="false">
+                            <span class="font-weight-bold small text-uppercase">Smart Lights</span></a>
+                    </div>
+                </div>
+
+
+                <div class="col-md-9">
+                    <!-- Tabs content -->
+                    <div class="tab-content" id="v-pills-tabContent">
+                        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                            aria-labelledby="v-pills-home-tab">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="product_carousel prod">
+                                        <div class="product_img prodimg">
+                                            <a href="">
+                                                <img src="../Images/light48.jpg"
+                                                    alt="Kichler Single 13 Watt White Dimmable A19 Medium (E26) 2700K LED Bulb"
+                                                    title="Kichler Single 13 Watt White Dimmable A19 Medium (E26) 2700K LED Bulb">
+                                            </a>
+                                        </div>
+                                        <div class="product_description">
+                                            <a href="">
+                                                <h5 id="h5_light48">Single 13W LED Bulb</h5>
+                                            </a>
+                                            <p id="p_light48">Brand: Kichler</p>
+                                            <h3 id="h3_light48">$8</h3>
+                                        </div>
+                                        <div class="product_btns">
+                                            <ul>
+                                                <li id="light48" onclick="myEye(this.id)"><i class="far fa-eye"></i>
+                                                </li>
+                                                <li id="Addcart_light48" data-name="Kichler_Single_13W_LED_Bulb"
+                                                    data-price="8" class="add-to-cart">
+                                                    <i class="fas fa-shopping-cart"></i>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="product_carousel prod">
+                                        <div class="product_img prodimg">
+                                            <a href="">
+                                                <img src="../Images/light49.jpg"
+                                                    alt="Progress Lighting Single 6.5 Watt (50 Watt Equivalent) LED for Life Dimmable MR16 Flood Light Bulb, GU10 Base"
+                                                    title="Progress Lighting Single 6.5 Watt (50 Watt Equivalent) LED for Life Dimmable MR16 Flood Light Bulb, GU10 Base">
+                                            </a>
+                                        </div>
+                                        <div class="product_description">
+                                            <a href="">
+                                                <h5 id="h5_light49">Single 6.5W LED</h5>
+                                            </a>
+                                            <p id="p_light49">Brand: Progress Lighting</p>
+                                            <h3 id="h3_light49">$9</h3>
+                                        </div>
+                                        <div class="product_btns">
+                                            <ul>
+                                                <li id="light49" onclick="myEye(this.id)"><i class="far fa-eye"></i>
+                                                </li>
+                                                <li id="Addcart_light49" data-name="Progress_Single_6.5W_LED"
+                                                    data-price="9" class="add-to-cart">
+                                                    <i class="fas fa-shopping-cart"></i>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="product_carousel prod">
+                                        <div class="product_img prodimg">
+                                            <a href="">
+                                                <img src="../Images/light50.jpg"
+                                                    alt="Minka Lavery Single Light 6.5 Watt MR16 GU5.3 LED Bulb"
+                                                    title="Minka Lavery Single Light 6.5 Watt MR16 GU5.3 LED Bulb">
+                                            </a>
+                                        </div>
+                                        <div class="product_description">
+                                            <a href="">
+                                                <h5 id="h5_light50">6.5 Watt MR16 LED Bulb</h5>
+                                            </a>
+                                            <p id="p_light50">Brand: Minka Lavery</p>
+                                            <h3 id="h3_light50">$11</h3>
+                                        </div>
+                                        <div class="product_btns">
+                                            <ul>
+                                                <li id="light50" onclick="myEye(this.id)"><i class="far fa-eye"></i>
+                                                </li>
+                                                <li id="Addcart_light50" data-name="Minka_6.5_Watt_MR16_LED_Bulb"
+                                                    data-price="11" class="add-to-cart">
+                                                    <i class="fas fa-shopping-cart"></i>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="product_carousel prod">
+                                        <div class="product_img prodimg">
+                                            <a href="">
+                                                <img src="../Images/light51.jpg"
+                                                    alt="Generation Single 5 Watt 3000K White Dimmable G9 Bi-Pin LED Bulb"
+                                                    title="Generation Single 5 Watt 3000K White Dimmable G9 Bi-Pin LED Bulb">
+                                            </a>
+                                        </div>
+                                        <div class="product_description">
+                                            <a href="">
+                                                <h5 id="h5_light51">Single 5W Bi-Pin LED Bulb</h5>
+                                            </a>
+                                            <p id="p_light51">Brand: Generation Lighting</p>
+                                            <h3 id="h3_light51">$17</h3>
+                                        </div>
+                                        <div class="product_btns">
+                                            <ul>
+                                                <li id="light51" onclick="myEye(this.id)"><i class="far fa-eye"></i>
+                                                </li>
+                                                <li id="Addcart_light51"
+                                                    data-name="Generation_Single_5W_Bi_Pin_LED_Bulb" data-price="17"
+                                                    class="add-to-cart">
+                                                    <i class="fas fa-shopping-cart"></i>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="product_carousel prod">
+                                        <div class="product_img prodimg">
+                                            <a href="">
+                                                <img src="../Images/light52.jpg" alt="
+                                                Maxim 10 Watt White Dimmable BR30 Medium (E26) LED Bulbs"
+                                                    title="Maxim 10 Watt White Dimmable BR30 Medium (E26) LED Bulbs">
+                                            </a>
+                                        </div>
+                                        <div class="product_description">
+                                            <a href="">
+                                                <h5 id="h5_light52">10W BR30 Medium LED Bulb</h5>
+                                            </a>
+                                            <p id="p_light52">Brand: Maxim</p>
+                                            <h3 id="h3_light52">$19</h3>
+                                        </div>
+                                        <div class="product_btns">
+                                            <ul>
+                                                <li id="light52" onclick="myEye(this.id)"><i class="far fa-eye"></i>
+                                                </li>
+                                                <li id="Addcart_light52" data-name="Maxim_10W_BR30_Medium_LED_Bulb"
+                                                    data-price="19" class="add-to-cart">
+                                                    <i class="fas fa-shopping-cart"></i>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="product_carousel prod">
+                                        <div class="product_img prodimg">
+                                            <a href="">
+                                                <img src="../Images/light53.jpg" alt="
+                                                Generation Single 45 Watt T30 Medium (E26) LED Bulb"
+                                                    title="Generation Single 45 Watt T30 Medium (E26) LED Bulb">
+                                            </a>
+                                        </div>
+                                        <div class="product_description">
+                                            <a href="">
+                                                <h5 id="h5_light53">45W T30 Medium LED Bulb</h5>
+                                            </a>
+                                            <p id="p_light53">Brand: Generation Lighting</p>
+                                            <h3 id="h3_light53">$52</h3>
+                                        </div>
+                                        <div class="product_btns">
+                                            <ul>
+                                                <li id="light53" onclick="myEye(this.id)"><i class="far fa-eye"></i>
+                                                </li>
+                                                <li id="Addcart_light53" data-name="Generation_45W_T30_Medium_LED_Bulb"
+                                                    data-price="52" class="add-to-cart">
+                                                    <i class="fas fa-shopping-cart"></i>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
+                            aria-labelledby="v-pills-profile-tab">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="product_carousel prod">
+                                        <div class="product_img prodimg">
+                                            <a href="">
+                                                <img src="../Images/light54.jpg"
+                                                    alt="Generation Smart Wifi Led Strip Lights Works With Alexa, Google Home"
+                                                    title="Generation Smart Wifi Led Strip Lights Works With Alexa, Google Home">
+                                            </a>
+                                        </div>
+                                        <div class="product_description">
+                                            <a href="">
+                                                <h5 id="h5_light54">Wifi LED Works With Alexa</h5>
+                                            </a>
+                                            <p id="p_light54">Brand: Generation Lighting</p>
+                                            <h3 id="h3_light54">$29</h3>
+                                        </div>
+                                        <div class="product_btns">
+                                            <ul>
+                                                <li id="light54" onclick="myEye(this.id)"><i class="far fa-eye"></i>
+                                                </li>
+                                                <li id="Addcart_light54"
+                                                    data-name="Generation_Wifi_Led_Works_With_Alexa" data-price="29"
+                                                    class="add-to-cart">
+                                                    <i class="fas fa-shopping-cart"></i>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="product_carousel prod">
+                                        <div class="product_img prodimg">
+                                            <a href="">
+                                                <img src="../Images/light55.jpg"
+                                                    alt="Kichler Smart wifi Ceiling Light works with Alexa and Google home"
+                                                    title="Kichler Smart wifi Ceiling Light works with Alexa and Google home">
+                                            </a>
+                                        </div>
+                                        <div class="product_description">
+                                            <a href="">
+                                                <h5 id="h5_light55">Wifi Light Works With Alexa</h5>
+                                            </a>
+                                            <p id="p_light55">Brand: Kichler</p>
+                                            <h3 id="h3_light55">$19</h3>
+                                        </div>
+                                        <div class="product_btns">
+                                            <ul>
+                                                <li id="light55" onclick="myEye(this.id)"><i class="far fa-eye"></i>
+                                                </li>
+                                                <li id="Addcart_light55" data-name="Kichler_Wifi_Light_Works_With_Alexa"
+                                                    data-price="19" class="add-to-cart">
+                                                    <i class="fas fa-shopping-cart"></i>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="product_carousel prod">
+                                        <div class="product_img prodimg">
+                                            <a href="">
+                                                <img src="../Images/light56.jpg"
+                                                    alt="Minka Solo Bluetooth Speaker Light Bulb"
+                                                    title="Minka Solo Bluetooth Speaker Light Bulb">
+                                            </a>
+                                        </div>
+                                        <div class="product_description">
+                                            <a href="">
+                                                <h5 id="h5_light56">Bluetooth Speaker Light Bulb</h5>
+                                            </a>
+                                            <p id="p_light56">Brand: Minka Lavery</p>
+                                            <h3 id="h3_light56">$40</h3>
+                                        </div>
+                                        <div class="product_btns">
+                                            <ul>
+                                                <li id="light56" onclick="myEye(this.id)"><i class="far fa-eye"></i>
+                                                </li>
+                                                <li id="Addcart_light56" data-name="Minka_Solo_Bluetooth_Speaker_Light_Bulb"
+                                                    data-price="40" class="add-to-cart">
+                                                    <i class="fas fa-shopping-cart"></i>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="product_carousel prod">
+                                        <div class="product_img prodimg">
+                                            <a href="">
+                                                <img src="../Images/light57.jpg"
+                                                    alt="Maxim Light Works With Alexa"
+                                                    title="Maxim Light Works With Alexa">
+                                            </a>
+                                        </div>
+                                        <div class="product_description">
+                                            <a href="">
+                                                <h5 id="h5_light57">Light Works With Alexa</h5>
+                                            </a>
+                                            <p id="p_light57">Brand: Maxim</p>
+                                            <h3 id="h3_light57">$43</h3>
+                                        </div>
+                                        <div class="product_btns">
+                                            <ul>
+                                                <li id="light57" onclick="myEye(this.id)"><i class="far fa-eye"></i>
+                                                </li>
+                                                <li id="Addcart_light57" data-name="Maxim_Light_Works_With_Alexa"
+                                                    data-price="43" class="add-to-cart">
+                                                    <i class="fas fa-shopping-cart"></i>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="product_carousel prod">
+                                        <div class="product_img prodimg">
+                                            <a href="">
+                                                <img src="../Images/light58.jpg"
+                                                    alt="Progress Color Changing RGB LED"
+                                                    title="Progress Color Changing RGB LED">
+                                            </a>
+                                        </div>
+                                        <div class="product_description">
+                                            <a href="">
+                                                <h5 id="h5_light58">Color Changing RGB LED</h5>
+                                            </a>
+                                            <p id="p_light58">Brand: Progress Lighting</p>
+                                            <h3 id="h3_light58">$17</h3>
+                                        </div>
+                                        <div class="product_btns">
+                                            <ul>
+                                                <li id="light58" onclick="myEye(this.id)"><i class="far fa-eye"></i>
+                                                </li>
+                                                <li id="Addcart_light58" data-name="Progress_Color_Changing_RGB_LED" data-price="17"
+                                                    class="add-to-cart">
+                                                    <i class="fas fa-shopping-cart"></i>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="product_carousel prod">
+                                        <div class="product_img prodimg">
+                                            <a href="">
+                                                <img src="../Images/light59.jpg"
+                                                    alt="Kichler Color Changing LED Light"
+                                                    title="Kichler Color Changing LED Light">
+                                            </a>
+                                        </div>
+                                        <div class="product_description">
+                                            <a href="">
+                                                <h5 id="h5_light59">Color Changing LED Light</h5>
+                                            </a>
+                                            <p id="p_light59">Brand: Kichler</p>
+                                            <h3 id="h3_light59">$20</h3>
+                                        </div>
+                                        <div class="product_btns">
+                                            <ul>
+                                                <li id="light59" onclick="myEye(this.id)"><i class="far fa-eye"></i>
+                                                </li>
+                                                <li id="Addcart_light59" data-name="Kichler_Color_Changing_LED_Light"
+                                                    data-price="20" class="add-to-cart">
+                                                    <i class="fas fa-shopping-cart"></i>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <div class="container">
+            <div class="row descModal">
+                <div class="col-md-6">
+                    <img class="modal-content product-modal-img" id="img01">
+                </div>
+                <div class="col-md-6" id="descriptionModal" style="border-left: 1px solid rgba(0,0,0,0.2);">
+                    <h5 id="h501"></h5>
+                    <p id="p01"></p>
+                    <h3 id="h301" style="font-weight: bold;"></h3>
+                    <p style="padding-top: 40px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
+                        tempora nulla dolore reiciendis ut dicta maiores quam, nemo amet commodi ipsam illo suscipit
+                        ratione. Quos perspiciatis nisi harum qui eos!</p>
+                    <a href="../files/testdoc.docx" id="a01" class="btnCart" download>Download As Doc</a>
+                    <button href="#" class="btnCart" id="write-review">Write A Rewiew</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4  col-md-4 footer_info">
+                    <h3>Quick Information</h3>
+                    <p><i class="fas fa-envelope"></i><a href="mailto:">&nbsp;&nbsp;support@brightworld.com</a></p>
+                    <p><i class="fas fa-map-marker-alt"></i><a href="#" onclick="return false;">&nbsp;&nbsp;Ap #867-859 Sit Rd. Azusa New York 39531</a></p>
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li><a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        </li>
+                        <li><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        </li>
+                        <li><a href="https://twitter.com/?lang=en" target="_blank"><i class="fab fa-twitter"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-8  col-md-8">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 footer_link">
+                            <h3>Categories</h3>
+                            <ul>
+                                <li><a id="ceiling" onclick="window.location.assign('ceiling.html')">Ceiling Lights</a>
+                                </li>
+                                <li><a id="decorative" onclick="window.location.assign('decorative.html')">Decorative
+                                        Lights</a></li>
+                                <li><a id="emergency" onclick="window.location.assign('emergency.html')">Emergency
+                                        Lights</a></li>
+                                        <li><a id="light" onclick="window.location.assign('light.html')">Light Bulbs</a></li>
+                                <li><a id="wall" onclick="window.location.assign('street.html')">Street Lights</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4 col-md-4 footer_link">
+                            <h3>Brands</h3>
+                            <ul>
+                                <li><a id="generation" onclick="window.location.assign('generation.html')">Generation
+                                        Lighting</a></li>
+                                <li><a id="kichler" onclick="window.location.assign('kichler.html')">kichler
+                                        Lighting</a></li>
+                                <li><a id="maxim" onclick="window.location.assign('maxim.html')">Maxim Lighting</a></li>
+                                <li><a id="minka" onclick="window.location.assign('minka.html')">Minka Lavery Lighting</a></li>
+                                <li><a id="progress" onclick="window.location.assign('progress.html')">Progress
+                                        Lighting</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4 col-md-4 footer_link">
+                            <h3>Service & Legal</h3>
+                            <ul>
+                                <li><a href="faqs.html">FAQs</a></li>
+                                <li><a href="policy.html">Return Policy</a></li>
+                                <li><a href="privacypolicy.html">Privacy Policy</a></li>
+                                <li><a href="contact.html">Contact Us</a></li>
+                                <li><a href="sitemap.html">Site Map</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p>Copyright © 2021 BrightWorld</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="https://api.whatsapp.com/send?phone=+923012851596&text=Hello!%20I%27m%20at%20Bright%20World." class="float"
+        target="_blank">
+        <i class="fab fa-whatsapp my-float"></i>
+    </a>
+
+
+    <!-- Cart Modal -->
+    <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"
+        style="z-index: 9999;">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content cartModal">
+                <div class="modal-header">
+                    <h5 class="modal-title addtocart-tittle" id="exampleModalLabel">Your Selected Items:</h5>
+                    <button type="button" class="close addtocart-close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-9">
+                            <div class="table-responsive">
+                                <table class="show-cart table">
+
+                                </table>
+                            </div>
+
+                        </div>
+                        <div class="col-md-3">
+                            <div>Price: $ <span class="total-cart" id="totCart"></span></div>
+                            <div>Discount Code: <input type="text" class="discount-code" id="disc_code"
+                                    placeholder="ENTER CODE">&nbsp;&nbsp;</div>
+                            <button class='applyBtn btn btn-primary' onclick="codeApply()">APPLY</button>
+                            <div>Total Price: <strong>$ <span class="discount-cart" id="discCart"></span></strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary Closebtn" data-dismiss="modal">Close</button>
+                    <button type="button" id="buyBtn" class="btn btn-primary Buybtn">Buy now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- user cart form -->
+
+    <div class="modal fade" id="user-cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true" style="z-index: 99999;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Enter your Details</h5>
+                    <button type="button" class="close addtocart-close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body user-cart-body">
+                    <div class="form-group user-cart-form-grp">
+                        <label>Name</label>
+                        <input type="text" class="form-control" id="user-cart-name" placeholder="Enter Name">
+                    </div>
+                    <div class="form-group user-cart-form-grp">
+                        <label>Email</label>
+                        <input type="text" class="form-control" id="user-cart-email" placeholder="Enter Email">
+                    </div>
+                    <div class="form-group user-cart-form-grp">
+                        <label>Phone</label>
+                        <input type="text" class="form-control" id="user-cart-phone" placeholder="Enter Phone Number"
+                            maxlength="11">
+                    </div>
+                    <div class="form-group user-cart-form-grp">
+                        <label>Adderss</label>
+                        <input type="text" class="form-control" id="user-cart-address" placeholder="Enter Address">
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary Closebtn" data-dismiss="modal">Close</button>
+                    <button type="button" id="user-cart-submit" class="btn btn-primary Buybtn">Submit</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- user review form -->
+
+    <div class="modal fade" id="user-review" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true" style="z-index: 99999;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Write A Review</h5>
+                    <button type="button" class="close user-review-close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body user-review-body">
+                    <div class="form-group user-review-form-grp">
+                        <label>Name</label>
+                        <input type="text" class="form-control" id="user-review-name" placeholder="Enter Name">
+                    </div>
+                    <div class="form-group user-review-form-grp">
+                        <label>Email</label>
+                        <input type="text" class="form-control" id="user-review-email" placeholder="Enter Email">
+                    </div>
+                    <div class="form-group user-review-form-grp">
+                        <label>Review</label>
+                        <textarea type="text" class="form-control" id="user-review-address"
+                            placeholder="Write Review"></textarea>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary Closebtn" data-dismiss="modal">Close</button>
+                    <button type="button" id="user-review-submit" class="btn btn-primary Buybtn">Submit</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- jQuery, JS  -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
+
+
+    <script src="../JS/cart.js"></script>
+    <script src="../JS/modal.js"></script>
+    <script src="../JS/timer.js"></script>
+    <script src="../JS/search.js"></script>
+
+</body>
+
+</html>
+
+<script>
+    const $dropdown = $(".dropdown");
+    const $dropdownToggle = $(".dropdown-toggle");
+    const $dropdownMenu = $(".dropdown-menu");
+    const showClass = "show";
+
+    $(window).on("load resize", function () {
+        if (this.matchMedia("(min-width: 768px)").matches) {
+            $dropdown.hover(
+                function () {
+                    const $this = $(this);
+                    $this.addClass(showClass);
+                    $this.find($dropdownToggle).attr("aria-expanded", "true");
+                    $this.find($dropdownMenu).addClass(showClass);
+                },
+                function () {
+                    const $this = $(this);
+                    $this.removeClass(showClass);
+                    $this.find($dropdownToggle).attr("aria-expanded", "false");
+                    $this.find($dropdownMenu).removeClass(showClass);
+                }
+            );
+        } else {
+            $dropdown.off("mouseenter mouseleave");
+        }
+    });
+</script>
